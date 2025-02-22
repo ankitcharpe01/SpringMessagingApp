@@ -24,4 +24,9 @@ public class SpringMessagingApplication {
     public String postRequest(@RequestBody UserDTO user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
+
+    @PutMapping("/hello/put/{firstName}")
+    public String putRequest(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
 }
